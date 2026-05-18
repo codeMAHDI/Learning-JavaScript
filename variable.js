@@ -18,32 +18,39 @@
 
 // let, const, var
 
-// var can be re-declared and updated
-var name = "John";
-console.log(name); // Output: John
-
-name = "sjadhakus"
-console.log(name); // Output: sjadhakus
-
-
-// let can be updated but not re-declared
-let score=100
-console.log("score is: " + score); // Output: 100
+// var name = "Alice";;
+// var name= "Bob";
+// console.log(name);//Bob
 
 
 
-// const cannot be updated or re-declared
-const country = "USA";
-console.log(country); // Output: USA
+// let age = 24
+// age = 2342
 
-// country = "Canada"; // This will throw an error
-// const country = "Canada"; // This will also throw an error   
+// console.log(age);//2342
 
 
+// const country = "USA"
+// // country = "India"
+// console.log(country);//TypeError: Assignment to constant variable.
+
+
+//undefined
+
+// let a;
+// console.log(a);//undefined
+
+
+{
+    let x = 10;
+    let x=7364;
+    console.log(x); // 10
+}
 
 
 
 
 
-
+// Type in js
+//Boolean, Number, String, Object, undefined, null
 
