@@ -41,11 +41,11 @@
 // console.log(a);//undefined
 
 
-{
-    let x = 10;
-    let x=7364;
-    console.log(x); // 10
-}
+// {
+//     let x = 10;
+//     let x=7364;
+//     console.log(x); // 10
+// }
 
 
 
@@ -54,3 +54,14 @@
 // Type in js
 //Boolean, Number, String, Object, undefined, null
 
+// Object is a collection of key-value pairs
+
+const person = {
+    name: "Alice",
+    age: 24,
+    isStudent: true
+}
+
+console.log(person.name); // Alice
+console.log(person.age); // 24
+console.log(person.isStudent); // true
