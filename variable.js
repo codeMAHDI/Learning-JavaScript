@@ -62,6 +62,9 @@ const person = {
     isStudent: true
 }
 
+person.name= "Test Name"
+// person['age']= 30
+
 console.log(person.name); // Alice
 console.log(person.age); // 24
 console.log(person.isStudent); // true
