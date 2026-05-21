@@ -54,11 +54,32 @@
 
 // String Methods
 
-let str= "Hello World"
-console.log(str.toUpperCase()); // Convert to uppercase
-console.log(str.toLowerCase()); // Convert to lowercase
-console.log(str.charAt(0)); // Get character at index 0
-console.log(str.indexOf("o")); // Get index of first occurrence of 'o'
-console.log(str.substring(0, 5)); // Get substring from index 0 to 5
-console.log(str.split(" ")); // Split the string into an array of substrings based on the space character
-console.log(str.replace("World", "JavaScript")); // Replace "World" with "JavaScript"
+// let str= "Hello World"
+// console.log(str.toUpperCase());
+// console.log(str) // Convert to uppercase
+// console.log(str.toLowerCase()); // Convert to lowercase
+// console.log(str.charAt(0)); // Get character at index 0
+// console.log(str.indexOf("o")); // Get index of first occurrence of 'o'
+// console.log(str.substring(0, 5)); // Get substring from index 0 to 5
+// console.log(str.split(" ")); // Split the string into an array of substrings based on the space character
+// console.log(str.replace("World", "JavaScript")); // Replace "World" with "JavaScript"
+
+
+// String slice method
+
+// let str= "Hello World"
+// console.log(str.slice(0, 5)); // Get substring from index 0 to 5
+// console.log(str.slice(6)); // Get substring from index 6 to the end of the string
+// console.log(str.slice(-5)); // Get the last 5 characters of the string
+// console.log(str.slice(-11, -6)); // Get substring from index -11 to -6 (which is "Hello")   
+
+// String concat method
+
+// let str1= "Hello"
+// let str2= "World"
+// console.log(str1.concat(" ", str2)); // Concatenate str1 and str2 with a space in between       
+
+// // String replace method
+
+// let str3= "Hello World"
+// console.log(str3.replace("World", "JavaScript")); // Replace "World" with "JavaScript"  
