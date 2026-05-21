@@ -50,3 +50,15 @@
 // let name= "Mahdi"
 // let age= 30
 // console.log(`My name is ${name} and I am ${age} years old.`);
+
+
+// String Methods
+
+let str= "Hello World"
+console.log(str.toUpperCase()); // Convert to uppercase
+console.log(str.toLowerCase()); // Convert to lowercase
+console.log(str.charAt(0)); // Get character at index 0
+console.log(str.indexOf("o")); // Get index of first occurrence of 'o'
+console.log(str.substring(0, 5)); // Get substring from index 0 to 5
+console.log(str.split(" ")); // Split the string into an array of substrings based on the space character
+console.log(str.replace("World", "JavaScript")); // Replace "World" with "JavaScript"
