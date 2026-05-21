@@ -1,0 +1,52 @@
+// console.log("Loops and Strings");
+
+// // Loops
+
+// // For loop
+// for (let i = 0; i < 5; i++) {
+//     console.log(i);
+// }
+
+// // While loop
+// let j = 0;
+// while (j < 5) {
+//     console.log(j);
+//     j++;
+// }
+
+// // Do-while loop
+// let k = 0;
+// do {
+//     console.log(k);
+//     k++;
+// } while (k < 5);
+
+// // Strings
+
+// let str1 = "Hello";
+// let str2 = "World";
+
+// console.log(str1 + " " + str2); // Concatenation
+// console.log(str1.length); // Length of the string
+// console.log(str1.toUpperCase()); // Convert to uppercase
+// console.log(str2.toLowerCase()); // Convert to lowercase
+// console.log(str1.charAt(0)); // Get character at index 0
+// console.log(str1.indexOf("l")); // Get index of first occurrence of 'l'
+// console.log(str1.substring(0, 3)); // Get substring from index 0 to 3  
+
+// // For of loop to iterate over characters in a string/array
+// let str="hello";
+// str= "bal aji"
+
+// for (let char of str) {
+//     console.log(char);
+// }
+
+// // String 
+// let str= "Mahdi"
+// console.log(`Here is the string LENGHT: ${str.length}`);
+
+// // String intepolation means embedding expressions inside string literals using backticks and ${} syntax. It allows you to create dynamic strings by including variables or expressions directly within the string.
+// let name= "Mahdi"
+// let age= 30
+// console.log(`My name is ${name} and I am ${age} years old.`);
