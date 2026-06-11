@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart | Your Daily Super Shop</title>
+    
+    <!-- Google Fonts: Poppins for a modern, friendly look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        Free Delivery on orders over $50! 🚚 Shop Now
+    </div>
+
+    <!-- Navigation Bar -->
+    <header id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-basket-shopping"></i> FreshMart
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for groceries, fruits, vegetables...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="nav-icons">
+                <a href="wishlist.html" class="icon-wrapper" title="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+                <a href="orders.html" class="icon-wrapper" title="My Orders">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge">3</span>
+                </a>
+                <a href="profile.html" class="icon-wrapper" title="Profile">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-1" id="bg-1"></div>
+        <div class="hero-bg-2" id="bg-2"></div>
+        <div class="hero-bg-3" id="bg-3"></div>
+        
+        <h1 style="position: relative; z-index: 2;">Fresh Groceries Delivered to Your Doorstep</h1>
+        <p style="position: relative; z-index: 2;">Get up to 30% off on your first order. Eat fresh, stay healthy with our organic products.</p>
+        <button class="btn-primary" style="position: relative; z-index: 2;">Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+    </section>
+
+    <!-- Hot Deals / Flash Sale Section -->
+    <section class="flash-sale" style="background: #fee2e2; padding: 20px 0; margin: 40px auto; max-width: 1200px; border-radius: 15px; text-align: center;">
+        <h2 style="color: #dc2626; margin-bottom: 10px;"><i class="fa-solid fa-bolt"></i> Flash Sale! Ends in: <span id="timer" style="background: #dc2626; color: white; padding: 5px 10px; border-radius: 5px;">02:45:30</span></h2>
+        <p style="color: #991b1b;">Flat 50% Off on Selected Items. Hurry Up!</p>
+    </section>
+
+    <!-- Categories Section -->
+    <h2 class="section-title">Shop by Category</h2>
+    <div class="categories">
+        <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3194/3194591.png" alt="Fruits">
+            <h3>Fresh Fruits</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2153/2153788.png" alt="Vegetables">
+            <h3>Vegetables</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046769.png" alt="Meat">
+            <h3>Meat & Fish</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3014/3014502.png" alt="Dairy">
+            <h3>Dairy & Eggs</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2553/2553691.png" alt="Bakery">
+            <h3>Bakery</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/931/931320.png" alt="Beverages">
+            <h3>Beverages</h3>
+        </div>
+    </div>
+
+    <!-- Featured Products Section -->
+    <h2 class="section-title">Daily Best Sells</h2>
+    <div class="products">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="discount-tag">-20%</div>
+            <img src="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Apples">
+            <h3 class="product-title">Fresh Red Apples</h3>
+            <div class="product-price">$4.99 <span>$6.50</span></div>
+            <button class="add-to-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="https://images.pexels.com/photos/2872755/pexels-photo-2872755.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Bananas">
+            <h3 class="product-title">Organic Bananas</h3>
+            <div class="product-price">$2.99</div>
+            <button class="add-to-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="discount-tag">-10%</div>
+            <img src="https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Milk">
+            <h3 class="product-title">Fresh Cow Milk (1L)</h3>
+            <div class="product-price">$3.50 <span>$3.90</span></div>
+            <button class="add-to-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Broccoli">
+            <h3 class="product-title">Green Broccoli</h3>
+            <div class="product-price">$1.99</div>
+            <button class="add-to-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Popular Brands Section -->
+    <section class="brands-section" style="max-width: 1200px; margin: 60px auto; text-align: center;">
+        <h2 class="section-title">Trusted Brands We Offer</h2>
+        <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; opacity: 0.5; font-size: 40px; margin-top: 30px;">
+            <i class="fa-brands fa-envira"></i> 
+            <i class="fa-brands fa-pagelines"></i> 
+            <i class="fa-brands fa-nutritionix"></i> 
+            <i class="fa-solid fa-seedling"></i>
+            <i class="fa-solid fa-leaf"></i>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        <div class="promo-text">
+            <h2>Get 20% Off Your First Order!</h2>
+            <p>Use code <strong>FRESH20</strong> at checkout to claim your discount.</p>
+        </div>
+        <button class="btn-primary" style="background-color: #856404;">Claim Now</button>
+    </div>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="benefits-container">
+            <div>
+                <i class="fa-solid fa-truck-fast benefit-icon"></i>
+                <h3>Free Delivery</h3>
+                <p>On orders above $50</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-leaf benefit-icon"></i>
+                <h3>100% Fresh</h3>
+                <p>Farm fresh organic food</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-wallet benefit-icon"></i>
+                <h3>Secure Payment</h3>
+                <p>100% secure payment gateway</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-headset benefit-icon"></i>
+                <h3>24/7 Support</h3>
+                <p>Dedicated support anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" style="background: var(--white); padding: 70px 20px; border-top: 1px solid var(--border);">
+        <h2 class="section-title">How FreshMart Works</h2>
+        <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; text-align: center; gap: 30px;">
+            <div style="flex: 1; min-width: 200px;">
+                <div style="background: #ecfdf5; width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 35px; color: var(--primary);">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3 style="margin-bottom: 10px; color: var(--text-dark);">1. Order Online</h3>
+                <p style="color: var(--text-light); font-size: 15px;">Choose from thousands of fresh products and place your order using our app or website.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <div style="background: #ecfdf5; width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 35px; color: var(--primary);">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <h3 style="margin-bottom: 10px; color: var(--text-dark);">2. We Pack Safely</h3>
+                <p style="color: var(--text-light); font-size: 15px;">Our expert team carefully selects and packs your groceries securely to ensure freshness.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <div style="background: #ecfdf5; width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 35px; color: var(--primary);">
+                    <i class="fa-solid fa-motorcycle"></i>
+                </div>
+                <h3 style="margin-bottom: 10px; color: var(--text-dark);">3. Fast Delivery</h3>
+                <p style="color: var(--text-light); font-size: 15px;">Get your items delivered directly to your doorstep in under 30 minutes. Enjoy!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" style="background: #fdfbf7; padding: 70px 20px;">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+            <!-- Review 1 -->
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: relative;">
+                <i class="fa-solid fa-quote-left" style="font-size: 40px; color: #f3f4f6; position: absolute; top: 20px; left: 20px;"></i>
+                <p style="position: relative; z-index: 1; color: var(--text-light); font-style: italic; margin-bottom: 25px; margin-top: 15px;">"The vegetables are always incredibly fresh, and the delivery is super fast. It saves me so much time. Highly recommended for daily needs!"</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100" alt="User" style="width: 55px; height: 55px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <h4 style="color: var(--text-dark);">Sarah Jenkins</h4>
+                        <div style="color: #fbbf24; font-size: 13px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: relative;">
+                <i class="fa-solid fa-quote-left" style="font-size: 40px; color: #f3f4f6; position: absolute; top: 20px; left: 20px;"></i>
+                <p style="position: relative; z-index: 1; color: var(--text-light); font-style: italic; margin-bottom: 25px; margin-top: 15px;">"I was skeptical about buying meat online, but FreshMart delivered the best quality I've seen. The packaging is premium and safe."</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100" alt="User" style="width: 55px; height: 55px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <h4 style="color: var(--text-dark);">David Carter</h4>
+                        <div style="color: #fbbf24; font-size: 13px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" style="background: var(--white); padding: 70px 20px;">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+            <details style="background: var(--bg-light); padding: 20px; border-radius: 12px; cursor: pointer; border: 1px solid var(--border);">
+                <summary style="font-weight: 600; font-size: 17px; outline: none; color: var(--text-dark);">What are your delivery hours?</summary>
+                <p style="color: var(--text-light); margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border);">We deliver from 8:00 AM to 10:00 PM, 7 days a week including holidays.</p>
+            </details>
+            <details style="background: var(--bg-light); padding: 20px; border-radius: 12px; cursor: pointer; border: 1px solid var(--border);">
+                <summary style="font-weight: 600; font-size: 17px; outline: none; color: var(--text-dark);">Do you offer free delivery?</summary>
+                <p style="color: var(--text-light); margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border);">Yes! We offer free delivery on all orders above $50. For orders under $50, a standard delivery fee of $5 applies.</p>
+            </details>
+            <details style="background: var(--bg-light); padding: 20px; border-radius: 12px; cursor: pointer; border: 1px solid var(--border);">
+                <summary style="font-weight: 600; font-size: 17px; outline: none; color: var(--text-dark);">Can I return a product if I'm not satisfied?</summary>
+                <p style="color: var(--text-light); margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border);">Absolutely. We have a "No Questions Asked" 100% money-back guarantee if you are not satisfied with the freshness of our products.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Newsletter & App Download Section -->
+    <section style="background: #f3f4f6; padding: 60px 20px; border-top: 1px solid #e5e7eb;">
+        <!-- Quick Order Tracking Widget -->
+        <div style="max-width: 1200px; margin: 0 auto 50px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
+            <div>
+                <h3 style="color: var(--text-dark); margin-bottom: 5px;"><i class="fa-solid fa-box-open" style="color: var(--primary);"></i> Track Your Order</h3>
+                <p style="color: var(--text-light); font-size: 14px;">Enter your tracking number to see your delivery status.</p>
+            </div>
+            <div style="display: flex; gap: 10px; flex: 1; max-width: 500px;">
+                <input type="text" placeholder="e.g. FM-12345678" style="padding: 12px 20px; border: 1px solid var(--border); border-radius: 5px; flex: 1; outline: none; font-size: 15px;">
+                <button class="btn-primary" style="border-radius: 5px; padding: 12px 25px;">Track Now</button>
+            </div>
+        </div>
+
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 40px;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="font-size: 28px; margin-bottom: 10px; color: #1f2937;">Get 20% Discount on Your First Order!</h2>
+                <p style="color: #6b7280; margin-bottom: 20px;">Join our email subscription now to get updates on promotions and coupons.</p>
+                <div style="display: flex; gap: 10px;">
+                    <input type="email" placeholder="Enter your email" style="padding: 12px 20px; border: 1px solid #e5e7eb; border-radius: 5px; flex: 1; outline: none; font-size: 15px;">
+                    <button style="background: #10b981; color: white; padding: 12px 25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Subscribe</button>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 300px; text-align: right;">
+                <h3 style="margin-bottom: 20px; color: #1f2937;">Download Our App</h3>
+                <div style="display: flex; gap: 15px; justify-content: flex-end;">
+                    <button style="padding: 12px 25px; background: #111827; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;"><i class="fa-brands fa-apple" style="font-size: 20px; margin-right: 5px; vertical-align: middle;"></i> App Store</button>
+                    <button style="padding: 12px 25px; background: #111827; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;"><i class="fa-brands fa-google-play" style="font-size: 18px; margin-right: 5px; vertical-align: middle;"></i> Google Play</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extended Mega Footer -->
+    <footer style="background: #111827; color: white; padding: 70px 20px 20px;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; padding-bottom: 40px; border-bottom: 1px solid #374151;">
+            
+            <!-- Column 1 -->
+            <div>
+                <h2 style="color: #10b981; font-size: 24px; margin-bottom: 15px;"><i class="fa-solid fa-basket-shopping"></i> FreshMart</h2>
+                <p style="color: #9ca3af; margin-bottom: 20px; line-height: 1.8;">Your one-stop destination for fresh groceries, delivered straight to your door. We ensure quality and freshness.</p>
+                <div style="font-size: 20px; display: flex; gap: 15px; color: #9ca3af;">
+                    <i class="fa-brands fa-facebook" style="cursor: pointer;"></i>
+                    <i class="fa-brands fa-instagram" style="cursor: pointer;"></i>
+                    <i class="fa-brands fa-twitter" style="cursor: pointer;"></i>
+                    <i class="fa-brands fa-youtube" style="cursor: pointer;"></i>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+                <h3 style="margin-bottom: 25px; font-size: 18px;">Quick Links</h3>
+                <ul style="list-style: none; color: #9ca3af; line-height: 2.5;">
+                    <li><a href="#" style="text-decoration: none; color: inherit;">About Us</a></li>
+                    <li><a href="#" style="text-decoration: none; color: inherit;">Track Order</a></li>
+                    <li><a href="#" style="text-decoration: none; color: inherit;">Privacy Policy</a></li>
+                    <li><a href="#" style="text-decoration: none; color: inherit;">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div>
+                <h3 style="margin-bottom: 25px; font-size: 18px;">Categories</h3>
+                <ul style="list-style: none; color: #9ca3af; line-height: 2.5;">
+                    <li><a href="#" style="text-decoration: none; color: inherit;">Fresh Fruits</a></li>
+                    <li><a href="#" style="text-decoration: none; color: inherit;">Vegetables</a></li>
+                    <li><a href="#" style="text-decoration: none; color: inherit;">Meat & Seafood</a></li>
+                    <li><a href="#" style="text-decoration: none; color: inherit;">Dairy & Bakery</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div>
+                <h3 style="margin-bottom: 25px; font-size: 18px;">Contact Info</h3>
+                <ul style="list-style: none; color: #9ca3af; line-height: 2.5;">
+                    <li><i class="fa-solid fa-location-dot" style="margin-right: 10px; color: #10b981;"></i> 123 Super Shop St, NY</li>
+                    <li><i class="fa-solid fa-phone" style="margin-right: 10px; color: #10b981;"></i> +1 (800) 123-4567</li>
+                    <li><i class="fa-solid fa-envelope" style="margin-right: 10px; color: #10b981;"></i> support@freshmart.com</li>
+                    <li><i class="fa-regular fa-clock" style="margin-right: 10px; color: #10b981;"></i> 8:00 AM - 10:00 PM</li>
+                </ul>
+                <div style="margin-top: 25px; font-size: 30px; display: flex; gap: 15px; color: #4b5563;">
+                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+                    <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
+                </div>
+            </div>
+        </div>
+
+        <p style="color: #9ca3af; margin-top: 30px; text-align: center; font-size: 14px;">&copy; 2026 FreshMart. Designed & Developed by <strong>Moshiur Rahman</strong>. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating UI Elements -->
+    <!-- 1. Customer Support Chat Icon -->
+    <a href="chat.html" title="Chat with Support" style="position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; cursor: pointer; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); z-index: 1000; transition: transform 0.3s; text-decoration: none;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <i class="fa-solid fa-comment-dots"></i>
+    </a>
+
+    <!-- 2. Back to Top Button -->
+    <div id="backToTopBtn" title="Back to Top" style="position: fixed; bottom: 110px; right: 30px; background: #1f2937; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 20px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 999; visibility: hidden; opacity: 0; transform: translateY(20px); transition: all 0.3s;">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- Beautiful Top Toast Notification -->
+    <div id="toast" class="custom-toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Item added to your cart successfully!</span>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

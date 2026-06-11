@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist | FreshMart</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-basket-shopping"></i> FreshMart
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for groceries...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="nav-icons">
+                <a href="wishlist.html" class="icon-wrapper" style="color: #ef4444;" title="Wishlist">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+                <a href="orders.html" class="icon-wrapper" title="My Orders">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge">3</span>
+                </a>
+                <a href="profile.html" class="icon-wrapper" title="Profile">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Wishlist Section -->
+    <section class="profile-container">
+        
+        <!-- Left Sidebar -->
+        <div class="profile-sidebar">
+            <div class="profile-cover"></div>
+            <div class="profile-info">
+                <div class="profile-pic-container">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Profile Picture">
+                </div>
+                <h3>Moshiur Rahman</h3>
+                <p>moshiur@example.com</p>
+            </div>
+
+            <div class="profile-menu">
+                <a href="profile.html"><i class="fa-regular fa-id-badge"></i> Edit Profile</a>
+                <a href="profile.html"><i class="fa-solid fa-lock"></i> Change Password</a>
+                <a href="orders.html"><i class="fa-solid fa-box"></i> My Orders</a>
+                <a href="wishlist.html" class="active"><i class="fa-solid fa-heart"></i> Wishlist</a>
+                <a href="#" class="logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a>
+            </div>
+        </div>
+
+        <!-- Right Content Area: Wishlist -->
+        <div class="profile-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--bg-light); margin-bottom: 30px; padding-bottom: 15px;">
+                <h2 style="border: none; margin: 0; padding: 0;">My Wishlist <span style="font-size: 16px; color: var(--text-light); font-weight: normal;">(3 Items)</span></h2>
+                <button onclick="showWishlistToast('All items added to cart!', true)" style="background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 500;"><i class="fa-solid fa-cart-plus"></i> Add All to Cart</button>
+            </div>
+            
+            <div class="wishlist-grid">
+                <!-- Product 1 -->
+                <div class="product-card wishlist-card" id="wishlist-item-1">
+                    <div class="remove-wishlist" title="Remove from Wishlist" onclick="removeItem('wishlist-item-1')">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                    <img src="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Apples" style="width: 120px; height: 120px;">
+                    <h3 class="product-title" style="font-size: 16px;">Fresh Red Apples</h3>
+                    <div class="product-price" style="font-size: 18px;">$4.99</div>
+                    <button class="add-to-cart" onclick="showWishlistToast('Item added to cart!', true)" style="padding: 8px; font-size: 14px;"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card wishlist-card" id="wishlist-item-2">
+                    <div class="remove-wishlist" title="Remove from Wishlist" onclick="removeItem('wishlist-item-2')">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                    <img src="https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Milk" style="width: 120px; height: 120px;">
+                    <h3 class="product-title" style="font-size: 16px;">Fresh Cow Milk (1L)</h3>
+                    <div class="product-price" style="font-size: 18px;">$3.50</div>
+                    <button class="add-to-cart" onclick="showWishlistToast('Item added to cart!', true)" style="padding: 8px; font-size: 14px;"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card wishlist-card" id="wishlist-item-3">
+                    <div class="remove-wishlist" title="Remove from Wishlist" onclick="removeItem('wishlist-item-3')">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                    <img src="https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Broccoli" style="width: 120px; height: 120px;">
+                    <h3 class="product-title" style="font-size: 16px;">Green Broccoli</h3>
+                    <div class="product-price" style="font-size: 18px;">$1.99</div>
+                    <button class="add-to-cart" onclick="showWishlistToast('Item added to cart!', true)" style="padding: 8px; font-size: 14px;"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Beautiful Top Toast Notification -->
+    <div id="wishlistToast" class="custom-toast">
+        <i id="toastIcon" class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Success!</span>
+    </div>
+
+    <script>
+        function showWishlistToast(message, isSuccess = true) {
+            const toast = document.getElementById('wishlistToast');
+            const icon = document.getElementById('toastIcon');
+            
+            document.getElementById('toastMessage').innerText = message;
+            
+            if(isSuccess) {
+                icon.className = "fa-solid fa-circle-check";
+                icon.style.color = "var(--primary)";
+                toast.style.borderLeftColor = "var(--primary)";
+            } else {
+                icon.className = "fa-solid fa-trash-can";
+                icon.style.color = "#dc2626";
+                toast.style.borderLeftColor = "#dc2626";
+            }
+            
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function removeItem(itemId) {
+            const item = document.getElementById(itemId);
+            if(item) {
+                item.style.transform = "scale(0)";
+                item.style.opacity = "0";
+                setTimeout(() => {
+                    item.remove();
+                    showWishlistToast('Item removed from wishlist.', false);
+                }, 300);
+            }
+        }
+    </script>
+</body>
+</html>

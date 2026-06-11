@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | FreshMart</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-basket-shopping"></i> FreshMart
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for groceries...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="nav-icons">
+                <a href="wishlist.html" class="icon-wrapper" title="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+                <a href="orders.html" class="icon-wrapper" style="color: var(--primary);" title="My Orders">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge">3</span>
+                </a>
+                <a href="profile.html" class="icon-wrapper" title="Profile">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Orders Section -->
+    <section class="profile-container">
+        
+        <!-- Left Sidebar -->
+        <div class="profile-sidebar">
+            <div class="profile-cover"></div>
+            <div class="profile-info">
+                <div class="profile-pic-container">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Profile Picture">
+                </div>
+                <h3>Moshiur Rahman</h3>
+                <p>moshiur@example.com</p>
+            </div>
+
+            <div class="profile-menu">
+                <a href="profile.html"><i class="fa-regular fa-id-badge"></i> Edit Profile</a>
+                <a href="profile.html"><i class="fa-solid fa-lock"></i> Change Password</a>
+                <a href="orders.html" class="active"><i class="fa-solid fa-box"></i> My Orders</a>
+                <a href="wishlist.html"><i class="fa-regular fa-heart"></i> Wishlist</a>
+                <a href="#" class="logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a>
+            </div>
+        </div>
+
+        <!-- Right Content Area: Orders -->
+        <div class="profile-content">
+            <h2>Order History</h2>
+            
+            <div class="order-list">
+                <!-- Order Item 1 -->
+                <div class="order-item delivered">
+                    <div class="order-info">
+                        <div class="order-header">
+                            <div class="order-icon"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <h4>Order #FM-98765</h4>
+                                <span class="status-badge status-delivered">Delivered</span>
+                            </div>
+                        </div>
+                        <div class="order-details-summary">
+                            <div class="summary-item">
+                                <h5>Placed On</h5>
+                                <p>June 10, 2026</p>
+                            </div>
+                            <div class="summary-item">
+                                <h5>Total Amount</h5>
+                                <p>$45.50 (5 Items)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button onclick="showOrderToast('Reordering #FM-98765...')"><i class="fa-solid fa-rotate-right"></i> Reorder</button>
+                        <button><i class="fa-regular fa-eye"></i> Details</button>
+                    </div>
+                </div>
+
+                <!-- Order Item 2 -->
+                <div class="order-item processing">
+                    <div class="order-info">
+                        <div class="order-header">
+                            <div class="order-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                            <div>
+                                <h4>Order #FM-98766</h4>
+                                <span class="status-badge status-processing">Processing</span>
+                            </div>
+                        </div>
+                        <div class="order-details-summary">
+                            <div class="summary-item">
+                                <h5>Placed On</h5>
+                                <p>June 12, 2026</p>
+                            </div>
+                            <div class="summary-item">
+                                <h5>Total Amount</h5>
+                                <p>$12.99 (2 Items)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button class="track-btn" onclick="showOrderToast('Tracking info sent to your email!')"><i class="fa-solid fa-location-crosshairs"></i> Track</button>
+                        <button><i class="fa-regular fa-eye"></i> Details</button>
+                    </div>
+                </div>
+
+                <!-- Order Item 3 -->
+                <div class="order-item cancelled">
+                    <div class="order-info">
+                        <div class="order-header">
+                            <div class="order-icon"><i class="fa-solid fa-xmark"></i></div>
+                            <div>
+                                <h4>Order #FM-98720</h4>
+                                <span class="status-badge status-cancelled">Cancelled</span>
+                            </div>
+                        </div>
+                        <div class="order-details-summary">
+                            <div class="summary-item">
+                                <h5>Placed On</h5>
+                                <p>May 28, 2026</p>
+                            </div>
+                            <div class="summary-item">
+                                <h5>Total Amount</h5>
+                                <p>$89.00 (12 Items)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button><i class="fa-regular fa-eye"></i> Details</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Beautiful Top Toast Notification -->
+    <div id="orderToast" class="custom-toast">
+        <i class="fa-solid fa-circle-info" style="color: #3b82f6;"></i>
+        <span id="toastMessage">Processing...</span>
+    </div>
+
+    <script>
+        function showOrderToast(message) {
+            const toast = document.getElementById('orderToast');
+            document.getElementById('toastMessage').innerText = message;
+            
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support | FreshMart</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Chat Page Specific Styles */
+        body {
+            background-color: #f3f4f6; /* slightly darker background for chat focus */
+        }
+
+        .chat-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            display: flex;
+            height: 70vh; /* Takes up 70% of screen height */
+            overflow: hidden;
+        }
+
+        /* Left Side: Active Chats / Contacts */
+        .chat-sidebar {
+            width: 300px;
+            background: #fdfbf7;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            padding: 20px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .contact-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .contact-item:hover, .contact-item.active {
+            background: #ecfdf5;
+        }
+
+        .contact-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            position: relative;
+        }
+
+        .online-dot {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 12px;
+            height: 12px;
+            background: #22c55e;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .contact-info h4 {
+            font-size: 15px;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+        }
+
+        .contact-info p {
+            font-size: 13px;
+            color: var(--text-light);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 180px;
+        }
+
+        /* Right Side: Chat Window */
+        .chat-window {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+
+        .chat-window-header {
+            padding: 15px 25px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #fafafa;
+        }
+
+        .message {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 15px;
+            font-size: 15px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .msg-received {
+            background: white;
+            color: var(--text-dark);
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        .msg-sent {
+            background: var(--primary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+            box-shadow: 0 2px 5px rgba(16, 185, 129, 0.2);
+        }
+
+        .msg-time {
+            font-size: 11px;
+            color: #9ca3af;
+            margin-top: 5px;
+            display: block;
+            text-align: right;
+        }
+
+        .msg-sent .msg-time {
+            color: #d1fae5;
+        }
+
+        /* Chat Input Area */
+        .chat-input-area {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .chat-input-wrapper {
+            flex: 1;
+            background: #f3f4f6;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            padding: 5px 20px;
+        }
+
+        .chat-input-wrapper input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 12px 0;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .chat-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+            padding: 0 5px;
+        }
+
+        .chat-btn:hover {
+            color: var(--primary);
+        }
+
+        .send-btn {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .send-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-basket-shopping"></i> FreshMart
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for groceries...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="nav-icons">
+                <a href="index.html" class="icon-wrapper" title="Back to Home">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+                <a href="profile.html" class="icon-wrapper" style="color: var(--primary);">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Chat Container -->
+    <div class="chat-container">
+        
+        <!-- Sidebar (Contacts) -->
+        <div class="chat-sidebar">
+            <div class="chat-header">
+                <span><i class="fa-solid fa-message"></i> Messages</span>
+                <i class="fa-solid fa-pen-to-square" style="cursor: pointer; color: var(--primary);"></i>
+            </div>
+            
+            <div class="contact-list">
+                <!-- Active Support Chat -->
+                <div class="contact-item active">
+                    <div class="contact-avatar">
+                        <i class="fa-solid fa-headset"></i>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="contact-info">
+                        <h4>FreshMart Support</h4>
+                        <p style="color: var(--primary); font-weight: 500;">Typing...</p>
+                    </div>
+                </div>
+
+                <!-- Previous Chat 1 -->
+                <div class="contact-item">
+                    <div class="contact-avatar" style="background: #3b82f6;">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h4>Delivery Agent (John)</h4>
+                        <p>I have left the package at the door.</p>
+                    </div>
+                </div>
+
+                <!-- Previous Chat 2 -->
+                <div class="contact-item">
+                    <div class="contact-avatar" style="background: #8b5cf6;">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h4>Automated Assistant</h4>
+                        <p>Your refund has been processed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Window -->
+        <div class="chat-window">
+            
+            <!-- Chat Header -->
+            <div class="chat-window-header">
+                <!-- Mobile Back Button -->
+                <button class="mobile-back-btn" onclick="window.location.href='index.html'" title="Back to Home" style="background: none; border: none; font-size: 20px; color: var(--text-light); cursor: pointer; display: flex; align-items: center; justify-content: center; margin-right: 10px; transition: color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-light)'">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+                <div class="contact-avatar" style="width: 40px; height: 40px; font-size: 18px;">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="online-dot"></div>
+                </div>
+                <div style="flex: 1;">
+                    <h3 style="font-size: 16px; color: var(--text-dark);">FreshMart Support</h3>
+                    <p style="font-size: 12px; color: #10b981;">Online | Typically replies instantly</p>
+                </div>
+                
+                <!-- Close Chat / Back Button -->
+                <button onclick="window.location.href='index.html'" title="Close Chat" style="background: none; border: none; font-size: 24px; color: #ef4444; cursor: pointer; opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.1)'" onmouseout="this.style.opacity='0.7'; this.style.transform='scale(1)'">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div style="text-align: center; color: var(--text-light); font-size: 12px; margin-bottom: 10px;">Today, 10:30 AM</div>
+                
+                <div class="message msg-received">
+                    Hello Moshiur! Welcome to FreshMart Support. How can I help you today?
+                    <span class="msg-time">10:30 AM</span>
+                </div>
+
+                <div class="message msg-sent">
+                    Hi, I wanted to know the status of my order #FM-98766. It says processing.
+                    <span class="msg-time">10:32 AM</span>
+                </div>
+
+                <div class="message msg-received">
+                    Let me check that for you right away. Please hold on for a moment.
+                    <span class="msg-time">10:33 AM</span>
+                </div>
+                
+                <!-- Typing Indicator -->
+                <div class="message msg-received" id="typingIndicator" style="width: 60px; padding: 10px 15px;">
+                    <i class="fa-solid fa-ellipsis" style="color: var(--text-light); animation: fade 1s infinite alternate;"></i>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <form class="chat-input-area" onsubmit="sendMessage(event)">
+                <button type="button" class="chat-btn" title="Attach File"><i class="fa-solid fa-paperclip"></i></button>
+                
+                <div class="chat-input-wrapper">
+                    <input type="text" id="messageInput" placeholder="Type your message here..." autocomplete="off">
+                    <button type="button" class="chat-btn"><i class="fa-regular fa-face-smile"></i></button>
+                </div>
+
+                <button type="submit" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function sendMessage(e) {
+            e.preventDefault();
+            const input = document.getElementById('messageInput');
+            const messageText = input.value.trim();
+            
+            if(messageText === '') return;
+
+            const chatMessages = document.getElementById('chatMessages');
+            const typingIndicator = document.getElementById('typingIndicator');
+
+            // Get Current Time
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; 
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            const timeString = hours + ':' + minutes + ' ' + ampm;
+
+            // Create New Message Element
+            const newMessage = document.createElement('div');
+            newMessage.className = 'message msg-sent';
+            newMessage.innerHTML = `
+                ${messageText}
+                <span class="msg-time">${timeString}</span>
+            `;
+
+            // Insert message before typing indicator
+            chatMessages.insertBefore(newMessage, typingIndicator);
+            
+            // Clear input
+            input.value = '';
+
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Simulate Reply after 2 seconds
+            typingIndicator.style.display = 'block';
+            setTimeout(() => {
+                const replyMessage = document.createElement('div');
+                replyMessage.className = 'message msg-received';
+                replyMessage.innerHTML = `
+                    Thanks for your patience. Your order is packed and will be dispatched in the next 30 minutes! 🚚
+                    <span class="msg-time">${timeString}</span>
+                `;
+                chatMessages.insertBefore(replyMessage, typingIndicator);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 2000);
+        }
+
+        // Add simple animation for typing dots
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fade {
+                0% { opacity: 0.3; }
+                100% { opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
