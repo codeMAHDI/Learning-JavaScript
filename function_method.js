@@ -108,10 +108,12 @@
 // console.log(sum); //Output: 102
 
 
-let arr=[1, 2, 3, 4, 5,890];
+// let arr=[1, 2, 3, 4, 5,890];
 
-let max = arr.reduce((previous, current)=>{
-    return previous>current ? previous : current;
-});
+// let max = arr.reduce((previous, current)=>{
+//     return previous>current ? previous : current;
+// });
 
-console.log(max);
+// console.log(max);
+
+
