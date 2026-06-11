@@ -1,5 +1,5 @@
 // Array 
-let arr = [1, 2, 3, 4, 5];
+// let arr = [1, 2, 3, 4, 5];
 // console.log(arr);
 // console.log(arr.length)
 // arr[0]=10
@@ -8,5 +8,12 @@ let arr = [1, 2, 3, 4, 5];
 // console.log(arr)
 // arr.pop() // remove the last element of the array
 // console.log(arr)
-console.log(typeof arr) // returns "object" because arrays are objects in JavaScript
+// console.log(typeof arr) // returns "object" because arrays are objects in JavaScript
 
+//for of loop to iterate over the array
+// for (let element  of arr){
+//     console.log(element)
+// }
+
+// arr.toString() // converts the array to a string
+// console.log(arr.toString())
