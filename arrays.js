@@ -9,3 +9,4 @@ let arr = [1, 2, 3, 4, 5];
 // arr.pop() // remove the last element of the array
 // console.log(arr)
 console.log(typeof arr) // returns "object" because arrays are objects in JavaScript
+
